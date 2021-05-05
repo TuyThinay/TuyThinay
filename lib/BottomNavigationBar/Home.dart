@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testforntsom/Body/profile.dart';
 import 'package:testforntsom/Newhome/data.dart';
 import 'package:testforntsom/Newhome/menu.dart';
 class Home extends StatefulWidget {
@@ -81,7 +82,7 @@ class _homeState extends State<Home> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>Menu()),
+                        MaterialPageRoute(builder: (context) =>Profile()),
                       );
                     },
                     child: Column(
