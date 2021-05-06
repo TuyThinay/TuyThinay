@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testforntsom/Body/Notification.dart';
 import 'package:testforntsom/BottomNavigationBar/History.dart';
@@ -27,20 +28,38 @@ class _CambodiaState extends State<Cambodia> {
       drawer:Drawer(
         child: ListView(
           children:<Widget> [
-            UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-               color: Colors.redAccent,
-              ),
-                accountName:Text('Thinay',style: TextStyle(
-                  fontSize: 20,
-                ),) ,
-                accountEmail: Text('tuythinay2222@gmail.com',style: TextStyle(
-                  fontSize: 20,
-                ),),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-               child: Text('Naa'),
-              ),
+            Stack(
+             children:<Widget> [
+               Container(
+                 height: 200,
+                 color: Colors.pink,
+               ),
+               Center(
+                 child: Container(
+                   margin: EdgeInsets.only(top: 50),
+                   height: 90,
+                   child: CircleAvatar(
+                     radius: 50,
+                     backgroundImage: AssetImage('assets/images/images.jpg'),
+                     backgroundColor: Colors.white,
+                   ),
+                 ),
+               ),
+               Center(
+                 child: Container(
+                   margin: EdgeInsets.only(top: 120),
+                   child: SizedBox(
+                     height: 10,
+                     width: 50,
+                     child: FlatButton(
+                       //color: Colors.yellow,
+                       onPressed: () { },
+                       child: Icon(Icons.camera_alt,color: Colors.white,size: 30,),
+                     ),
+                   ),
+                 ),
+               ),
+             ],
             ),
             ListTile(
               leading: Icon(Icons.home,size: 30,color: Colors.pink,),

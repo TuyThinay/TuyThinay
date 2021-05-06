@@ -6,12 +6,13 @@ class Menu extends StatefulWidget {
 }
 
 class Items{
-  final String ? title;
-  final String ? image;
-  Items({this.title, this.image});
+  final String  title;
+  final String  image;
+  Items({ required this.title, required this.image});
 }
 
 class _MenuState extends State<Menu> {
+  
   final List<Items> _items = [
     Items(title: 'នំត្នោត',image: 'assets/images/food2.jpg'),
     Items(title: 'បុកល្ហុង',image: 'assets/images/food3.jpg'),
