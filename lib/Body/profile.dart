@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Profile extends StatefulWidget {
   @override
@@ -8,263 +9,113 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // backgroundColor: Colors.red,
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
-        title: Text('Profile'),
+        title: Text('Profile',style: TextStyle(
+          color: Colors.red,
+          fontSize: 20,
+        ),),
       ),
-      body: SafeArea(
-        child: ListView(
-          children:<Widget> [
-           Container(
-             color: Colors.blueGrey,
-             height: 200,
-             child: Center(
-               child: Container(
-                 width: 100,
-                 height: 100,
-                 child: Stack(
-                   children: <Widget>[
-                     Center(
-                       child: Container(
-                         height: 90,
-                        // margin: EdgeInsets.only(top: 60),
-                         child: CircleAvatar(
-                           backgroundImage: AssetImage('assets/images/images.jpg'),
-                           radius: 50,
-                           backgroundColor: Colors.white,
-                         ),
-                       ),
-                     ),
-                     Center(
-                       child: Container(
-                         margin: EdgeInsets.only(top: 80),
-                         child: SizedBox(
-                           height: 50,
-                           width: 50,
-                           child: FlatButton(
-                             //color: Colors.yellow,
-                             onPressed: () { },
-                             child: Icon(Icons.camera_alt,color: Colors.white,size: 30,),
-                           ),
-                         ),
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
-             ),
-           ),
-            Container(
-              child: SingleChildScrollView(
-                child: Container(
-                  margin: EdgeInsets.only(right: 300,top: 20),
-                  child: Column(
-                    children: [
-                      //SizedBox(height: 20,),
-                      Text('Account',style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.blue
-                      ),),
-                    ],
+      body: Stack(
+        children: <Widget>[
+          Container(
+            height: 150,
+            color: Colors.blue,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 210,top: 30),
+            child: CircleAvatar(
+              backgroundColor: Colors.red,
+              radius: 40,
+              backgroundImage: AssetImage('assets/images/images.jpg'),
+            ),
+          ),
+        SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.only(top: 150),
+            height: 800,
+            color: Colors.white,
+            child:  Column(
+              children: [
+                ListTile(
+                  title: Text('notifications',style: TextStyle(
+                    color: Colors.red,
+                  ),),
+                  leading: Icon(Icons.notifications,size: 30,color: Colors.black,)),
+                SwitchListTile(
+                  value: true,
+                  title: Text("email notifications",style: TextStyle(
+                    color: Colors.red,
+                  ),),
+                  onChanged: (value) {},
+                  secondary: SizedBox(
+                    width: 10,
                   ),
                 ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              margin: EdgeInsets.only(right: 260),
-              child: Column(
-                children:<Widget> [
-                  Text('+8854546554',style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black
-                  ),),
-                ],
-              ),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              margin: EdgeInsets.only(right: 310),
-              child: Column(
-                children:<Widget> [
-                  Text('ATech',style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black
-                  ),),
-                ],
-              ),
-            ),
-            SizedBox(height: 20,),
-            Container(
-              margin: EdgeInsets.only(right: 150),
-              child: Column(
-                children:<Widget> [
-                  Text('ATech2222@gmail.com',style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black
-                  ),),
-                ],
-              ),
-            ),
-            SizedBox(height: 10,),
-            Divider(
-              color: Colors.black,
-              height: 5,
-            ),
-            SizedBox(height: 20,),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.notifications,size: 30,color: Colors.pink,),
-                    title: Text("Home",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
+                SwitchListTile(
+                  value: false,
+                  title: Text("push notifications"),
+                  onChanged: (value) {},
+                  secondary: SizedBox(
+                    width: 10,
                   ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.lock,size: 30,color: Colors.pink,),
-                    title: Text("Privacy",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
+                ),
+                _buildDivider(),
+                ListTile(
+                  title: Text(
+                    "privacy",
                   ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.time_to_leave_outlined,size: 30,color: Colors.pink,),
-                    title: Text("Data and Storage",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
+                  leading: Icon(Icons.person,color: Colors.black,size: 30,),
+                ),
+                RadioListTile(
+                  value: true,
+                  groupValue: true,
+                  title: Text("private"),
+                  onChanged: (value) {},
+                  secondary: SizedBox(
+                    width: 10,
                   ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.device_hub,size: 30,color: Colors.pink,),
-                    title: Text("Deice",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
+                  controlAffinity: ListTileControlAffinity.trailing,
+                ),
+                RadioListTile(
+                  value: false,
+                  groupValue: true,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                  title: Text("public"),
+                  onChanged: (value) {},
+                  secondary: SizedBox(
+                    width: 10,
                   ),
-                ],
-              ),
+                ),
+                _buildDivider(),
+                ListTile(
+                  title: Text("feedback"),
+                  subtitle: Text("we would love to hear your experience"),
+                  leading: Icon(Icons.feedback,size: 30,color: Colors.black,),
+                ),
+                ListTile(
+                  title: Text("terms and conditions"),
+                  subtitle: Text("legal, terms and conditions"),
+                  leading: Icon(Icons.access_alarm,size: 30,color: Colors.black,),
+                ),
+                ListTile(
+                  title: Text("logout"),
+                  subtitle: Text("you can logout from here"),
+                  leading: Icon(Icons.exit_to_app,size: 30,color: Colors.black,),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.menu,size: 30,color: Colors.pink,),
-                    title: Text("Menu",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
             ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.map,size: 30,color: Colors.pink,),
-                    title: Text("Map",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.work,size: 30,color: Colors.pink,),
-                    title: Text("Work",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.camera,size: 30,color: Colors.pink,),
-                    title: Text("Camera",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.people,size: 30,color: Colors.pink,),
-                    title: Text("People",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 200),
-              child: Column(
-                children:<Widget> [
-                  ListTile(
-                    leading: Icon(Icons.tv,size: 30,color: Colors.pink,),
-                    title: Text("TV",style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black
-                    ),),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
+      )
+    );
+  }
+  Padding _buildDivider() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 70),
+      child: Divider(
+        color: Colors.black,
       ),
     );
   }

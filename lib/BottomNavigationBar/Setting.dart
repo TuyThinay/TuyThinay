@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testforntsom/Body/language.dart';
 class Setting extends StatefulWidget {
   @override
   _settingState createState() => _settingState();
@@ -80,7 +81,12 @@ class _settingState extends State<Setting> {
                     Icons.keyboard_arrow_right,
                     color: Colors.lightBlueAccent,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>Language()),
+                    );
+                  },
                 ),
                 ListTile(
                   title: Text(
